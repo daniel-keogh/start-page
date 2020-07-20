@@ -1,0 +1,27 @@
+{
+  "name": "start-page",
+  "version": "1.0.0",
+  "description": "A Custom Start Page for a Browser",
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "build": "parcel build src/index.html --public-url .",
+    "prebuild": "rimraf dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-keogh/start-page.git"
+  },
+  "author": "Daniel Keogh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daniel-keogh/start-page/issues"
+  },
+  "homepage": "https://github.com/daniel-keogh/start-page#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {}
+}
