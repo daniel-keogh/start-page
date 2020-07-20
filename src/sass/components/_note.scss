@@ -1,0 +1,61 @@
+.note {
+    background-color: $color-dark-light;
+    min-height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1.6rem 1rem;
+    padding: 1.5rem 1.5rem .25rem 1rem;
+    position: relative;
+    animation: noteEntry .5s ease;
+    border-top: 1px solid lighten($color-dark-light, 10%);
+    border-radius: .6rem;
+    box-shadow: 0.8rem 0.8rem 1rem -0.3rem rgba(black, 0.45);
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &__content {
+        display: inline;
+        font-size: 1.6rem;
+        padding-bottom: 1.2rem;
+        word-wrap: break-word;
+    }
+
+    &__meta {
+        font-size: 1.2rem;
+        color: lightgrey;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 2px solid $notes-pane-color;
+        padding-top: .25rem;
+    }
+
+    &__dismiss {
+        text-decoration: none;
+        font-size: 3.2rem;
+        color: white;
+        transition: all .2s;
+        backface-visibility: hidden;
+        cursor: pointer;
+        user-select: none;
+        display: inline-block;
+
+        &:hover {
+            transform: scale(1.4);
+            color: $color-primary;
+        }
+
+        &:active {
+            transform: scale(1.2);
+        }
+    }
+
+    &--deleted {
+        transform: translateX(0);
+        overflow: hidden;
+        animation: noteDelete .5s ease-in;
+    }
+}

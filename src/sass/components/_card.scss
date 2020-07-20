@@ -1,0 +1,74 @@
+.card {
+    min-height: 22rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 .5rem 1rem 0 rgba(black, .4);
+    border-radius: .75rem;
+    text-align: center;
+    
+    &__heading {
+        text-transform: uppercase;
+        color: white;
+        padding: 1rem;
+        padding-top: 1.4rem;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: .12rem;
+        border-bottom: 2px solid white;
+        background-color: rgba($color-dark, .4);
+        font-family: $font-secondary;
+    }
+
+    &__list-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        padding: .5rem;
+        background-color: rgba($color-dark, .65);
+    }
+
+    &__list li {
+        list-style: none;
+        margin: 1.4rem auto;
+    }
+
+    .link {
+        color: white;
+        font-size: 1.75rem;
+        text-decoration: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -3px;
+            width: 0;
+            height: $sb-underline-height;
+            transition: all .1s ease;
+            z-index: 1;
+        }
+    
+        &:hover::after {
+            width: 100%;
+            left: 0;
+            background-color: $color-primary;
+        }
+
+        &:active {
+            color: rgba(white, .75);
+            transform: translateY(1px);
+            outline: none;
+        }
+    }
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Josefin+Sans&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="./sass/main.scss">
+
+        <title>Start Page</title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="today">
+                <p class="today__date"></p>
+                <p class="today__time"></p>
+            </div>
+        </div>
+
+        <main class="main-container">
+            <div class="search-bar">
+                <div class="search-box">
+                    <input autofocus
+                        type="text"
+                        id="search"
+                        placeholder="Search DuckDuckGo..."
+                        class="search-box__input">
+                    <label for="search" class="search-box__label">Search DuckDuckGo</label>
+                </div>
+                <div class="search-btn">
+                    <button class="search-btn__button">
+                        <img class="search-btn__icon" src="./assets/icons/search.svg" alt="search">
+                    </button>
+                </div>
+            </div>
+
+            <section class="sites-grid">
+                <div class="card">
+                    <h3 class="card__heading">News</h3>
+                    <div class="card__list-container">
+                        <ul class="card__list">
+                            <li>
+                                <a class="link" href="https://feedly.com/">Feedly</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://news.ycombinator.com/">Hacker News</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://news.google.com/">Google News</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://getpocket.com/">Pocket</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card__heading">Social</h3>
+                    <div class="card__list-container">
+                        <ul class="card__list">
+                            <li>
+                                <a class="link" href="https://mail.google.com/">Gmail</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://reddit.com/">Reddit</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://twitter.com/explore">Twitter</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card__heading">Media</h3>
+                    <div class="card__list-container">
+                        <ul class="card__list">
+                            <li>
+                                <a class="link" href="https://www.youtube.com/">YouTube</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://play.pocketcasts.com/">Pocket Casts</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://www.last.fm/">Last.fm</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://spotify.com/">Spotify</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card__heading">Reference</h3>
+                    <div class="card__list-container">
+                        <ul class="card__list">
+                            <li>
+                                <a class="link" href="https://www.goodreads.com/">Goodreads</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://www.udemy.com/">Udemy</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://wikipedia.org/wiki/Main_Page/">Wikipedia</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card__heading">Development</h3>
+                    <div class="card__list-container">
+                        <ul class="card__list">
+                            <li>
+                                <a class="link" href="https://github.com/trending/">GitHub</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://stackoverflow.com/">Stack Overflow</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://www.reddit.com/r/programming">r/programming</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 class="card__heading">Misc</h3>
+                    <div class="card__list-container">
+                        <ul class="card__list">
+                            <li>
+                                <a class="link" href="https://send.firefox.com/">Firefox Send</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://temp-mail.org/">Temp Mail</a>
+                            </li>
+                            <li>
+                                <a class="link" href="https://www.virustotal.com/gui/home/upload">VirusTotal</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="notes-pane">
+            <input type="checkbox" class="notes-pane__checkbox" id="notes-toggle">
+            <label for="notes-toggle" class="notes-pane__button">
+                <span class="notes-pane__icon"></span>
+            </label>
+            
+            <div class="notes">
+                <div class="notes__display">
+                    <h3>Notes</h3>
+                    <div class="notes__list"></div>
+                </div>
+                <input class="notes__input" type="text" placeholder="Add Note...">
+            </div>
+        </div>
+    </body>
+
+    <script src="./scripts/index.js" type="text/javascript"></script>
+</html>

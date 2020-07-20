@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+}
+
+.main-container {
+    max-width: 100rem;
+    margin: 8rem auto;
+    padding: 0 3rem;
+}
+
+.sites-grid {
+    margin: 8rem auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-gap: 2rem;
+
+    justify-content: center;
+
+    animation: moveInBottom 1s ease-out;
+
+    @media (max-width: 40rem) {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+}

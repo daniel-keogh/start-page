@@ -1,0 +1,46 @@
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-12rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes noteEntry {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes noteDelete {
+    0% {
+        opacity: 1;
+        transform: scale(1) translate(0);
+    }
+    10% {
+        transform: scale(.8);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
