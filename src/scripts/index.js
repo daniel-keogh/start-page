@@ -53,16 +53,16 @@ function search() {
 
 // Show date & time
 (function () {
-    const currentDate = document.querySelector(".today__date");
-    const currentTime = document.querySelector(".today__time");
+    const currentDate = document.querySelector(".clock__date");
+    const currentTime = document.querySelector(".clock__time");
 
     function refresh() {
-        const today = new Date();
+        const clock = new Date();
 
-        const hh = today.getHours();
-        const mm = `${today.getMinutes()}`.padStart(2, "0");
+        const hh = clock.getHours();
+        const mm = `${clock.getMinutes()}`.padStart(2, "0");
 
-        currentDate.innerHTML = today.toLocaleDateString("default", {
+        currentDate.innerHTML = clock.toLocaleDateString("default", {
             weekday: "short",
             day: "numeric",
             month: "long",
