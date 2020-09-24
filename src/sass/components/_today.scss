@@ -5,8 +5,10 @@
     backface-visibility: hidden;
     font-family: $font-secondary;
 
+    flex-basis: calc(100% - #{$fab-offset + $fab-diameter});
+
     & > * {
-        animation: moveInLeft 1s ease-out;
+        animation: moveInLeft .65s ease-out;
     }
 
     &__date {

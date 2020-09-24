@@ -1,0 +1,16 @@
+@mixin input-underline {
+    &::after {
+        content: "";
+        position: relative;
+        left: 50%;
+        width: 0;
+        height: $sb-underline-height;
+        background-color: $color-primary;
+        transition: all 0.15s ease-in-out;
+    }
+
+    &:focus-within::after {
+        width: calc(100% + #{$sb-btn-width});
+        left: 0;
+    }
+}

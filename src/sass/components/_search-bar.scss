@@ -7,7 +7,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    transition: all .2s ease;
     position: relative;
 
     &__input {
@@ -52,7 +51,7 @@
         color: rgba(white, .8);
         display: block;
         backface-visibility: hidden;
-        transition: all .4s;
+        transition: all .35s;
     }
 
     &__input:placeholder-shown + &__label {
@@ -61,26 +60,11 @@
         transform: translateY(5rem);
     }
 
-    &::after {
-        content: "";
-        position: relative;
-        left: 50%;
-        width: 0;
-        height: $sb-underline-height;
-        background-color: $color-primary;
-        transition: all .1s ease;
+    &:focus-within + .search-btn .search-btn__button {
+        border-bottom-right-radius: 0;
     }
-
-    &:focus-within {
-        & + .search-btn .search-btn__button {
-            border-bottom-right-radius: 0;
-        }
-
-        &::after {
-            width: calc(100% + #{$sb-btn-width});
-            left: 0;
-        }
-    }
+    
+    @include input-underline;
 }
 
 .search-btn {
