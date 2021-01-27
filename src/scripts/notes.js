@@ -64,14 +64,11 @@ class NotesManager {
 
     removeOne(note) {
         const index = this.#notes.findIndex(n => n.timestamp === note.timestamp);
+
         if (index !== -1) {
             this.#notes.splice(index, 1);
             localStorage.setItem(this.#key, JSON.stringify(this.#notes));
         }
-    }
-
-    removeAll() {
-        localStorage.clear();
     }
 
     attachElement(note) {

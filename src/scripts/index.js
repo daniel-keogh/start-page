@@ -6,6 +6,8 @@ let searchEngine = defaultEngine;
 
 notes.load();
 
+const currentDate = document.querySelector(".clock__date");
+const currentTime = document.querySelector(".clock__time");
 const searchButton = document.querySelector(".search-btn__button");
 const searchInput = document.querySelector(".search-box__input");
 const searchLabel = document.querySelector(".search-box__label");
@@ -14,11 +16,14 @@ const noteInput = document.querySelector(".notes__input");
 searchInput.value = "";
 noteInput.value = "";
 
+refreshTime();
+setInterval(refreshTime, 1000);
+
 // Event Listeners
 searchButton.addEventListener("click", search);
 
 searchInput.addEventListener("keyup", (e) => {
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
         search();
         return;
     }
@@ -32,7 +37,7 @@ searchInput.addEventListener("keyup", (e) => {
 });
 
 noteInput.addEventListener("keyup", (e) => {
-    if (e.key == "Enter" && e.target.value) {
+    if (e.key === "Enter" && e.target.value) {
         notes.add(e.target.value);
         noteInput.value = "";
     }
@@ -44,6 +49,7 @@ function search() {
 
     // Omit the search engine's "key" from the query
     const keys = searchEngines.map(se => se.key);
+
     if (keys.includes(query[0].toLowerCase())) {
         query.shift();
     }
@@ -52,24 +58,16 @@ function search() {
 }
 
 // Show date & time
-(function () {
-    const currentDate = document.querySelector(".clock__date");
-    const currentTime = document.querySelector(".clock__time");
+function refreshTime() {
+    const clock = new Date();
 
-    function refresh() {
-        const clock = new Date();
+    const hh = clock.getHours();
+    const mm = `${clock.getMinutes()}`.padStart(2, "0");
 
-        const hh = clock.getHours();
-        const mm = `${clock.getMinutes()}`.padStart(2, "0");
-
-        currentDate.innerHTML = clock.toLocaleDateString("default", {
-            weekday: "short",
-            day: "numeric",
-            month: "long",
-        });
-        currentTime.innerHTML = `${hh}:${mm}`;
-    }
-
-    refresh();
-    setInterval(refresh, 1000);
-})();
+    currentDate.innerHTML = clock.toLocaleDateString("default", {
+        weekday: "short",
+        day: "numeric",
+        month: "long",
+    });
+    currentTime.innerHTML = `${hh}:${mm}`;
+}
